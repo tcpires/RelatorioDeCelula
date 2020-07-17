@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "619018921668",
+    "firebase_url": "https://relatoriodecelula-84fca.firebaseio.com",
+    "project_id": "relatoriodecelula-84fca",
+    "storage_bucket": "relatoriodecelula-84fca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619018921668:android:9538f20b2d56ac6e3e4b91",
+        "android_client_info": {
+          "package_name": "com.relatoriodecelula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619018921668-bnjove1d9o877bvjstqeaoqiokckd007.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.relatoriodecelula",
+            "certificate_hash": "7e17128ef985ff404c32d1b42129a64c6b3217d6"
+          }
+        },
+        {
+          "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHjn-MNtu5lg7SkaaKpxGCFJveSgiutMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
