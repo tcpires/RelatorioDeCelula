@@ -42,6 +42,80 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619018921668:android:ada4cd5db063ddab3e4b91",
+        "android_client_info": {
+          "package_name": "com.relatoriodecelula.adultos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619018921668-buc148m5ndcfol9bpvupd7acnj54k08d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.relatoriodecelula.adultos",
+            "certificate_hash": "c2b9878c30a5e886c4e753b6819d0f6c51cea295"
+          }
+        },
+        {
+          "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHjn-MNtu5lg7SkaaKpxGCFJveSgiutMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619018921668:android:f34d891da57c003c3e4b91",
+        "android_client_info": {
+          "package_name": "com.relatoriodecelula.kids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619018921668-t5lsf45hcoptob27oi0d0h7e9b6houmt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.relatoriodecelula.kids",
+            "certificate_hash": "c2b9878c30a5e886c4e753b6819d0f6c51cea295"
+          }
+        },
+        {
+          "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHjn-MNtu5lg7SkaaKpxGCFJveSgiutMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619018921668-335cs3kqok4cefplvfs81v0mjujvmg35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

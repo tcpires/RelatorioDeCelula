@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">RelatorioDeCelula</string>
+    <string name="app_name">Kids</string>
     <string name="relatorioDeCelula">Relatório de Célula</string>
     <string name="lider">Líder</string>
-    <string name="quantidade_de_membros_kids_na_semana">Quantidade de Membros na Semana</string>
-    <string name="quantidade_de_membros_juvs_na_semana">Quantidade de Frequentadores na Semana</string>
+    <string name="quantidade_de_membros_kids_na_semana">Quantidade de Membros Kids na Semana</string>
+    <string name="quantidade_de_membros_juvs_na_semana">Quantidade de Membros Juvs na Semana</string>
     <string name="quantidade_de_viditantes_na_semana">Quantidade de Visitantes na Semana</string>
     <string name="enviar">ENVIAR</string>
     <string name="digite_o_nome_do_lider">Digite o nome do Lider</string>

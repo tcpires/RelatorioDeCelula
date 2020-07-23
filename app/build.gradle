@@ -5,7 +5,15 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
 
 android {
-    dataBinding{
+    signingConfigs {
+        config{
+            keyAlias 'key0'
+            keyPassword 'tpfh233014'
+            storeFile file('lideresApk.jks')
+            storePassword 'tpfh233014'
+        }
+    }
+    dataBinding {
         enabled true
     }
     compileSdkVersion 29
@@ -21,18 +29,36 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "version"
+    productFlavors {
+        adultos {
+            dimension "version"
+            applicationIdSuffix ".adultos"
+        }
+        kids {
+            dimension "version"
+            applicationIdSuffix ".kids"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.config
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            signingConfig signingConfigs.config
+
         }
     }
 }
 
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.firebase:firebase-database:19.3.1'

@@ -3,4 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="primaryAdultos">#cfdced</color>
+    <color name="darkAdultos">#9eaabb</color>
+    <color name="ligthAdultos">#ffffff</color>
+    <color name="primaryKids">#e8edbf</color>
+    <color name="darkKids">#a4bb5a</color>
+    <color name="ligthkids">#fffff2</color>
+
 </resources>

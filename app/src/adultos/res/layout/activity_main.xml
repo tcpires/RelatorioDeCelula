@@ -8,6 +8,7 @@
         android:layout_height="match_parent"
         android:padding="8dp"
         tools:context=".MainActivity"
+        android:background="@color/primaryAdultos"
         >
 
         <TextView
@@ -106,6 +107,8 @@
             android:id="@+id/btShowCalendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/ligthAdultos"
+            android:background="@color/darkAdultos"
             app:layout_constraintTop_toBottomOf="@id/etLeader"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/selecione_a_data_da_celula"/>
@@ -115,9 +118,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            android:background="@color/darkAdultos"
             android:text="@string/enviar"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/ligthAdultos"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent" />
 
