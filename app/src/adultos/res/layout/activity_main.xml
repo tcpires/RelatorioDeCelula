@@ -112,6 +112,15 @@
             app:layout_constraintTop_toBottomOf="@id/etLeader"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/selecione_a_data_da_celula"/>
+        <Button
+            android:id="@+id/search_cell"
+            android:textColor="@color/ligthAdultos"
+            android:background="@color/darkAdultos"
+            android:text="buscar celulas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/btSend"
+            />
 
         <Button
             android:id="@+id/btSend"

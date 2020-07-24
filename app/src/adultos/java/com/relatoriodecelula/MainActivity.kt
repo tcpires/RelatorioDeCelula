@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val day = calendar.get(DATE)
     private var week = 1
     private lateinit var takeDatePickerDialog: DatePickerDialog
+    private lateinit var fetchCells: FetchLeaderCells
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         btShowCalendar.setOnClickListener {
             takeCellDate()
             takeDatePickerDialog.show()
+        }
+        search_cell.setOnClickListener{
+            fetchCells = FetchLeaderCells()
+            fetchCells.getCellsPerMonth("Diego Dimitri", "5")
         }
     }
 
