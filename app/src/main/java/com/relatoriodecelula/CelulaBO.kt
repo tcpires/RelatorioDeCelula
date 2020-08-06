@@ -5,12 +5,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CelulaBO(
-    var leader: String? = null,
-    var members: String? = null,
-    var visitors: String? = null,
-    var regulars: String? = null,
+    var leader: String = "",
+    var members: String = "",
+    var visitors: String = "",
+    var regulars: String = "",
     var week: Int? = null,
-    var month: Int? = null,
-    var juveniles: String? = null,
-    var kids: String? = null
+    var month: String = "",
+    var juveniles: String = "",
+    var kids: String = ""
 ) : Parcelable

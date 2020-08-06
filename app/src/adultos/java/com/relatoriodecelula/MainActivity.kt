@@ -2,6 +2,7 @@ package com.relatoriodecelula
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private val day = calendar.get(DATE)
     private var week = 1
     private lateinit var takeDatePickerDialog: DatePickerDialog
-    private lateinit var fetchCells: FetchLeaderCells
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
             takeDatePickerDialog.show()
         }
         search_cell.setOnClickListener{
-            fetchCells = FetchLeaderCells()
-            fetchCells.getCellsPerMonth("Diego Dimitri", "5")
+            val intent : Intent = Intent(this, SearchCellsActivity::class.java)
+            startActivity(intent)
         }
     }
 

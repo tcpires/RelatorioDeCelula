@@ -9,10 +9,10 @@ class CelulaMapper {
     fun mapCellsOnMonth(snapshot: DataSnapshot, month: String): ArrayList<CelulaBO> {
 
         for (celula: DataSnapshot in snapshot.children) {
-            cell.leader = celula.child("leader").value as String?
-            cell.members = celula.child("members").value as String?
-            cell.visitors = celula.child("visitors").value as String?
-            cell.month = celula.child(month).value as Int?
+            cell.leader = celula.child("leader").value.toString()
+            cell.members = celula.child("members").value.toString()
+            cell.visitors = celula.child("visitors").value.toString()
+            cell.month = celula.child(month).value.toString()
 
             cellsOnMonth.add(cell)
         }
