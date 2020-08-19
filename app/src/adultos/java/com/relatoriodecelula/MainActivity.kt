@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             takeDatePickerDialog.show()
         }
         search_cell.setOnClickListener{
-            val intent : Intent = Intent(this, SearchCellsActivity::class.java)
+            val intent = Intent(this, SearchCellsActivity::class.java)
             startActivity(intent)
         }
     }

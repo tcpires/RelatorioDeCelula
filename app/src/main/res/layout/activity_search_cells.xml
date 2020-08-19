@@ -6,12 +6,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.relatoriodecelula.SearchCellsActivity">
+        tools:context="com.relatoriodecelula.SearchCellsActivity"
+        android:padding="8dp">
 
-        <GridLayout
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_cells"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="8dp"
+            android:layout_margin="8dp"/>
+
+        <EditText
+            android:id="@+id/etLeaderSearch"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@+id/search_cell_button"
+            android:layout_height="wrap_content"
+            android:hint="@string/digite_o_nome_do_lider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            android:padding="8dp"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btShowCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ligthAdultos"
+            android:background="@color/darkAdultos"
+            app:layout_constraintTop_toBottomOf="@id/etLeaderSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/selecione_a_data_da_celula"
+            android:padding="8dp"
+            android:layout_margin="8dp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btShowCalendar"
+            app:layout_constraintBottom_toTopOf="@id/search_cell_button"
+            tools:listitem="@layout/custom_cell_item"
+            android:orientation="horizontal"
+            tools:itemCount="4"
+            tools:spanCount="3"
             />
 
         <Button
