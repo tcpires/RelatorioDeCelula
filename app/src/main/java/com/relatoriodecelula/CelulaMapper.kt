@@ -12,7 +12,8 @@ class CelulaMapper {
             cell.leader = celula.child("leader").value.toString()
             cell.members = celula.child("members").value.toString()
             cell.visitors = celula.child("visitors").value.toString()
-            cell.month = celula.child(month).value.toString()
+            cell.month = month
+            cell.week = celula.key.toString()
 
             cellsOnMonth.add(cell)
         }

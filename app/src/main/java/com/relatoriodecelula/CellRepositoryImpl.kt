@@ -15,15 +15,13 @@ class CellRepositoryImpl : CellRepository{
     ) {
         reference = FirebaseApi().getReference(leader).child(month)
         query = reference.orderByChild(month)
-        var cellList = ArrayList<CelulaBO>()
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 isFailure.invoke(error.message)
             }
-
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.let {
-                    cellList = mapper.mapCellsOnMonth(snapshot, month)
+                    val cellList  = mapper.mapCellsOnMonth(snapshot, month)
                     isSuccessful.invoke(cellList)
                 }
             }

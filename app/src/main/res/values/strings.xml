@@ -11,9 +11,9 @@
     <string name="quantidade_de_frequentadores_na_celula">Quantidade de Frequentadores na Célula</string>
     <string name="quantidade_de_visitantes_na_celula">Quantidade de Visitantes na Célula</string>
     <string name="selecione_a_data_da_celula">Selecione a data da Célula</string>
-    <string name="week_cell_item">Semana $1%s</string>
-    <string name="members_cell_item">Membros: $1%s</string>
-    <string name="regulars_cell_item">Frequentadores: $1%s</string>
-    <string name="visitors_cell_item">Visitantes: $1%s</string>
+    <string name="week_cell_item">Semana: </string>
+    <string name="members_cell_item">Membros: </string>
+    <string name="regulars_cell_item">Frequentadores: </string>
+    <string name="visitors_cell_item">Visitantes: </string>
     <string name="search_cells">Buscar Células</string>
 </resources>

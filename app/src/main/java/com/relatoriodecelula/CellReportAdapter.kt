@@ -19,7 +19,7 @@ class CellReportAdapter(
     }
 
     override fun onBindViewHolder(holder: CellHolder, position: Int) {
-        holder.detail.text = cellList[position].week.toString()
+        holder.detail.text = cellList[position].week
         holder.members.text = cellList[position].members
         holder.visitors.text = cellList[position].visitors
         holder.regulars.text = cellList[position].regulars

@@ -9,7 +9,7 @@ data class CelulaBO(
     var members: String = "",
     var visitors: String = "",
     var regulars: String = "",
-    var week: Int? = null,
+    var week: String = "",
     var month: String = "",
     var juveniles: String = "",
     var kids: String = ""
