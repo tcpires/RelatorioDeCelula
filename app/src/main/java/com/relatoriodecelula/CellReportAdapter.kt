@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class CellReportAdapter(
-    private val cellList: ArrayList<CelulaBO>
+    private val cellList: List<CelulaBO>
 ) : RecyclerView.Adapter<CellHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CellHolder {

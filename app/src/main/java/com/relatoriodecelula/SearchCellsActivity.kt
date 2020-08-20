@@ -25,7 +25,7 @@ class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
             DataBindingUtil.setContentView(this, R.layout.activity_search_cells)
 
         search_cell_button.setOnClickListener {
-            getCellListPerMonth(FetchLeaderCells(), getCellBO())
+            getCellListPerMonth(FetchLeaderCells(), getCellBO(), ::updateAdapter)
         }
         btShowCalendar.setOnClickListener {
             takeCellMonth()
@@ -37,7 +37,7 @@ class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
         updateAdapter(listCells)
     }
 
-    private fun updateAdapter(listCells: ArrayList<CelulaBO>) {
+    private fun updateAdapter(listCells: List<CelulaBO>) {
         val adapter = CellReportAdapter(listCells)
         val layoutManager = LinearLayoutManager(this)
 
