@@ -7,9 +7,9 @@ class FetchLeaderCells : CellCallBackInterface {
     private lateinit var query: Query
     private val mapper: CelulaMapper = CelulaMapper()
 
-    fun getCellsPerMonth() {
-        val leader = getSearchParams(SearchCellsActivity()).leader
-        val month = getSearchParams(SearchCellsActivity()).month.toString()
+    fun getCellsPerMonth(cellBO: CelulaBO) {
+        val leader = cellBO.leader
+        val month = cellBO.month
         reference = FirebaseApi().getReference(leader).child(month)
         query = reference.orderByChild(month)
         cellListener(month)

@@ -6,11 +6,7 @@ interface CellCallBackInterface {
         view.getCellList(listCells)
     }
 
-    fun getSearchParams(view: SearchCellsActivity): CelulaBO {
-        return view.passSearchParams()
-    }
-
-    fun getCellListPerMonth(view: FetchLeaderCells){
-        view.getCellsPerMonth()
+    fun getCellListPerMonth(view: FetchLeaderCells, cellBO: CelulaBO){
+        view.getCellsPerMonth(cellBO)
     }
 }

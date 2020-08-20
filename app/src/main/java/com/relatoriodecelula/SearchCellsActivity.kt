@@ -24,7 +24,7 @@ class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
             DataBindingUtil.setContentView(this, R.layout.activity_search_cells)
 
         search_cell_button.setOnClickListener {
-            getCellListPerMonth(FetchLeaderCells())
+            getCellListPerMonth(FetchLeaderCells(), getCellBO())
         }
         btShowCalendar.setOnClickListener{
             takeCellMonth()
@@ -37,14 +37,11 @@ class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
         return cellList
     }
 
-    fun passSearchParams(): CelulaBO {
-        var params: CelulaBO = CelulaBO()
-        val leader = etLeaderSearch.text.toString()
+    private fun getCellBO(): CelulaBO {
+        val params = CelulaBO()
         val month = this.month.toString()
-
-        params.leader = leader
         params.month = month
-
+        params.leader = etLeaderSearch.text.toString()
         return params
     }
 
