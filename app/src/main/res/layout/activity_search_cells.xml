@@ -43,6 +43,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCellList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -51,6 +52,7 @@
             app:layout_constraintBottom_toTopOf="@id/search_cell_button"
             tools:listitem="@layout/custom_cell_item"
             android:orientation="horizontal"
+            android:visibility="gone"
             tools:itemCount="4"
             tools:spanCount="3"
             />
