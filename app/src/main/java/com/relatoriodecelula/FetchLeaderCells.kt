@@ -7,19 +7,15 @@ class FetchLeaderCells : CellCallBackInterface {
     private lateinit var query: Query
     private val mapper: CelulaMapper = CelulaMapper()
 
-    fun getCellsPerMonth(cellBO: CelulaBO) {
+    fun getCellsPerMonth(cellBO: CelulaBO, callback: (List<CelulaBO>) -> Unit) {
         val leader = cellBO.leader
         val month = cellBO.month
         reference = FirebaseApi().getReference(leader).child(month)
         query = reference.orderByChild(month)
-        cellListener(month)
+        cellListener(month, callback)
     }
 
-    fun callBack(cellList: ArrayList<CelulaBO>) {
-        getCellList(SearchCellsActivity(), cellList)
-    }
-
-    private fun cellListener(month: String) {
+    private fun cellListener(month: String, callback: (List<CelulaBO>) -> Unit) {
         var cellList = ArrayList<CelulaBO>()
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -29,7 +25,7 @@ class FetchLeaderCells : CellCallBackInterface {
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.let {
                     cellList = mapper.mapCellsOnMonth(snapshot, month)
-                    callBack(cellList)
+                    callback.invoke(cellList)
                 }
             }
         })

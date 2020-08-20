@@ -2,16 +2,17 @@ package com.relatoriodecelula
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.relatoriodecelula.databinding.ActivitySearchCellsBinding
 import kotlinx.android.synthetic.main.activity_search_cells.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
 
-    private var cellList: ArrayList<CelulaBO> = ArrayList()
     private lateinit var takeDatePickerDialog: DatePickerDialog
     private val calendar = Calendar.getInstance()
     private val year = calendar.get(Calendar.YEAR)
@@ -24,17 +25,27 @@ class SearchCellsActivity : AppCompatActivity(), CellCallBackInterface {
             DataBindingUtil.setContentView(this, R.layout.activity_search_cells)
 
         search_cell_button.setOnClickListener {
-            getCellListPerMonth(FetchLeaderCells(), getCellBO())
+            getCellListPerMonth(FetchLeaderCells(), getCellBO(), ::updateAdapter)
         }
-        btShowCalendar.setOnClickListener{
+        btShowCalendar.setOnClickListener {
             takeCellMonth()
             takeDatePickerDialog.show()
         }
     }
 
-    fun getCellList(listCells: ArrayList<CelulaBO>): ArrayList<CelulaBO> {
-        cellList = listCells
-        return cellList
+    fun getCellList(listCells: ArrayList<CelulaBO>) {
+        updateAdapter(listCells)
+    }
+
+    private fun updateAdapter(listCells: List<CelulaBO>) {
+        val adapter = CellReportAdapter(listCells)
+        val layoutManager = LinearLayoutManager(this)
+
+        val rv = findViewById<RecyclerView>(R.id.rvCellList)
+        rv.visibility = VISIBLE
+        rv.adapter = adapter
+        rv.layoutManager = layoutManager
+
     }
 
     private fun getCellBO(): CelulaBO {
