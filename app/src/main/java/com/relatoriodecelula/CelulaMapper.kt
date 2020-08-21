@@ -27,5 +27,18 @@ class CelulaMapper {
         }
         return cellsOnMonth
     }
+
+    fun mapCell(leader: String,
+                members: String,
+                visitors: String,
+                regulars: String): CelulaBO {
+        val cell = CelulaBO()
+        cell.leader = leader
+        cell.members = members
+        cell.visitors = visitors
+        cell.regulars = regulars
+
+        return cell
+    }
 }
 

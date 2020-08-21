@@ -5,8 +5,7 @@ import com.relatoriodecelula.CelulaBO
 class SearchCellPresenter : SearchCellContract.Presenter {
 
     lateinit var view: SearchCellContract.View
-    private val repository =
-        SearchCellRepositoryImpl()
+    private val repository = SearchCellRepositoryImpl()
 
     override fun checkIfLeaderIsNotEmpty(leader: String): Boolean {
         if (leader.isNullOrEmpty() || leader == " "){

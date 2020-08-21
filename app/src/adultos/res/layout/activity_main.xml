@@ -119,20 +119,23 @@
             android:text="buscar celulas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/btSend"
+            app:layout_constraintBottom_toBottomOf="parent"
+
             />
 
         <Button
             android:id="@+id/btSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
             android:background="@color/darkAdultos"
+            android:padding="8dp"
             android:text="@string/enviar"
             android:textAlignment="center"
             android:textColor="@color/ligthAdultos"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toTopOf="@id/search_cell"
+            app:layout_constraintTop_toBottomOf="@+id/etVisit"
+            tools:layout_editor_absoluteX="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

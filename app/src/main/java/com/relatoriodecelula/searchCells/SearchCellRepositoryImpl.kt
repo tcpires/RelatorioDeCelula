@@ -7,9 +7,7 @@ import com.relatoriodecelula.FirebaseApi
 
 class SearchCellRepositoryImpl :
     SearchCellRepository {
-    private lateinit var query: Query
-    private val mapper: CelulaMapper =
-        CelulaMapper()
+    private val mapper: CelulaMapper = CelulaMapper()
     private lateinit var reference: DatabaseReference
 
     override fun getCellsPerMonth(
