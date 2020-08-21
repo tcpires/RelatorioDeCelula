@@ -3,22 +3,29 @@ package com.relatoriodecelula
 import com.google.firebase.database.DataSnapshot
 
 class CelulaMapper {
-    private val cell = CelulaBO()
-    private val cellsOnMonth = ArrayList<CelulaBO>()
 
-    fun mapCellsOnMonth(snapshot: DataSnapshot, month: String): ArrayList<CelulaBO> {
+    fun mapCellsOnMonth(
+        snapshot: DataSnapshot,
+        month: String,
+        leader: String
+    ): MutableList<CelulaBO> {
+        val cellsOnMonth: MutableList<CelulaBO> = ArrayList()
 
-        for (celula: DataSnapshot in snapshot.children) {
-            cell.leader = celula.child("leader").value.toString()
-            cell.members = celula.child("members").value.toString()
-            cell.visitors = celula.child("visitors").value.toString()
-            cell.month = month
-            cell.week = celula.key.toString()
-
-            cellsOnMonth.add(cell)
+        for (celula in snapshot.children) {
+            if (celula.key?.contains(leader)!!) {
+                for (week in celula.children) {
+                    val cell = CelulaBO()
+                    cell.leader = week.child("leader").value.toString()
+                    cell.members = week.child("members").value.toString()
+                    cell.visitors = week.child("visitors").value.toString()
+                    cell.regulars = week.child("regulars").value.toString()
+                    cell.month = month
+                    cell.week = (week.key?.toInt()?.plus(1)).toString()
+                    cellsOnMonth.add(cell)
+                }
+            }
         }
-
         return cellsOnMonth
     }
-
 }
+

@@ -1,4 +1,6 @@
-package com.relatoriodecelula
+package com.relatoriodecelula.searchCells
+
+import com.relatoriodecelula.CelulaBO
 
 interface SearchCellContract {
 

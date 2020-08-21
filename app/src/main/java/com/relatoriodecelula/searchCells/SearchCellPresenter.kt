@@ -1,13 +1,16 @@
-package com.relatoriodecelula
+package com.relatoriodecelula.searchCells
 
-class CellPresenter : SearchCellContract.Presenter {
+import com.relatoriodecelula.CelulaBO
+
+class SearchCellPresenter : SearchCellContract.Presenter {
 
     lateinit var view: SearchCellContract.View
-    private val repository = CellRepositoryImpl()
+    private val repository =
+        SearchCellRepositoryImpl()
 
     override fun checkIfLeaderIsNotEmpty(leader: String): Boolean {
-        if (leader.isNullOrEmpty()){
-            view.showErrorDialog("usário Invalido")
+        if (leader.isNullOrEmpty() || leader == " "){
+            view.showErrorDialog("O campo Lider deve ser preenchido")
             return false
         }
         return true

@@ -1,4 +1,4 @@
-package com.relatoriodecelula
+package com.relatoriodecelula.searchCells
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.relatoriodecelula.CellReportAdapter
+import com.relatoriodecelula.CelulaBO
+import com.relatoriodecelula.R
 import com.relatoriodecelula.databinding.ActivitySearchCellsBinding
 import kotlinx.android.synthetic.main.activity_search_cells.*
 import java.util.*
@@ -18,19 +21,22 @@ class SearchCellsActivity : AppCompatActivity(), SearchCellContract.View {
     private val year = calendar.get(Calendar.YEAR)
     private var month = calendar.get(Calendar.MONTH)
     private val day = calendar.get(Calendar.DATE)
-    private val presenter = CellPresenter()
+    private val presenter = SearchCellPresenter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding: ActivitySearchCellsBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_search_cells)
+            DataBindingUtil.setContentView(this,
+                R.layout.activity_search_cells
+            )
 
         presenter.view = this
 
         search_cell_button.setOnClickListener {
             val month = this.month.toString()
             val leader = etLeaderSearch.text.toString()
-            presenter.fetchCellList(leader, month)
+            if (presenter.checkIfLeaderIsNotEmpty(leader))
+                presenter.fetchCellList(leader, month)
         }
 
         btShowCalendar.setOnClickListener {

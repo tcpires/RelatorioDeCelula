@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.relatoriodecelula.databinding.ActivityMainBinding
+import com.relatoriodecelula.searchCells.SearchCellsActivity
 import kotlinx.android.synthetic.adultos.activity_main.*
 import java.util.Calendar.*
 
@@ -57,10 +58,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendCellToFirebase(cell: CelulaBO) {
-        cell.leader?.let {
-            FirebaseApi().getReference(it).child(calendar.get(MONTH).toString())
+        cell.leader.let {
+            FirebaseApi().getReference(calendar.get(MONTH).toString()).child(it)
                 .child(week.toString())
-        }?.setValue(cell)
+        }.setValue(cell)
         clearAllFields()
     }
 

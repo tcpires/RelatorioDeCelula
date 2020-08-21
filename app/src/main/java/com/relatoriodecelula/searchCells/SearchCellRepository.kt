@@ -1,8 +1,8 @@
-package com.relatoriodecelula
+package com.relatoriodecelula.searchCells
 
-import java.time.Month
+import com.relatoriodecelula.CelulaBO
 
-interface CellRepository {
+interface SearchCellRepository {
     fun getCellsPerMonth(
         leader : String,
         month: String,
